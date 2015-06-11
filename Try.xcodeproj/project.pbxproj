@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB40E3C41B29E11600F70B74 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E3C31B29E11600F70B74 /* main.swift */; };
+		DB40E3CB1B29E12A00F70B74 /* Try.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E3CA1B29E12A00F70B74 /* Try.swift */; };
+		DB40E3E11B2A287D00F70B74 /* TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E3E01B2A287D00F70B74 /* TryTests.swift */; };
+		DB87CF721B2A29170033D1E4 /* Try.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E3CA1B29E12A00F70B74 /* Try.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB40E3BE1B29E11600F70B74 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DB40E3C01B29E11600F70B74 /* Try */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Try; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB40E3C31B29E11600F70B74 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DB40E3CA1B29E12A00F70B74 /* Try.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Try.swift; sourceTree = "<group>"; };
+		DB40E3DE1B2A287D00F70B74 /* TryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB40E3E01B2A287D00F70B74 /* TryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTests.swift; sourceTree = "<group>"; };
+		DB40E3E21B2A287D00F70B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB40E3BD1B29E11600F70B74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB40E3DB1B2A287D00F70B74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB40E3B71B29E11600F70B74 = {
+			isa = PBXGroup;
+			children = (
+				DB40E3C21B29E11600F70B74 /* Try */,
+				DB40E3DF1B2A287D00F70B74 /* TryTests */,
+				DB40E3C11B29E11600F70B74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB40E3C11B29E11600F70B74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB40E3C01B29E11600F70B74 /* Try */,
+				DB40E3DE1B2A287D00F70B74 /* TryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB40E3C21B29E11600F70B74 /* Try */ = {
+			isa = PBXGroup;
+			children = (
+				DB40E3C31B29E11600F70B74 /* main.swift */,
+				DB40E3CA1B29E12A00F70B74 /* Try.swift */,
+			);
+			path = Try;
+			sourceTree = "<group>";
+		};
+		DB40E3DF1B2A287D00F70B74 /* TryTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB40E3E01B2A287D00F70B74 /* TryTests.swift */,
+				DB40E3E21B2A287D00F70B74 /* Info.plist */,
+			);
+			path = TryTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB40E3BF1B29E11600F70B74 /* Try */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB40E3C71B29E11600F70B74 /* Build configuration list for PBXNativeTarget "Try" */;
+			buildPhases = (
+				DB40E3BC1B29E11600F70B74 /* Sources */,
+				DB40E3BD1B29E11600F70B74 /* Frameworks */,
+				DB40E3BE1B29E11600F70B74 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Try;
+			productName = Try;
+			productReference = DB40E3C01B29E11600F70B74 /* Try */;
+			productType = "com.apple.product-type.tool";
+		};
+		DB40E3DD1B2A287D00F70B74 /* TryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB40E3E31B2A287D00F70B74 /* Build configuration list for PBXNativeTarget "TryTests" */;
+			buildPhases = (
+				DB40E3DA1B2A287D00F70B74 /* Sources */,
+				DB40E3DB1B2A287D00F70B74 /* Frameworks */,
+				DB40E3DC1B2A287D00F70B74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TryTests;
+			productName = TryTests;
+			productReference = DB40E3DE1B2A287D00F70B74 /* TryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB40E3B81B29E11600F70B74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Chase Latta";
+				TargetAttributes = {
+					DB40E3BF1B29E11600F70B74 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					DB40E3DD1B2A287D00F70B74 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = DB40E3BB1B29E11600F70B74 /* Build configuration list for PBXProject "Try" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB40E3B71B29E11600F70B74;
+			productRefGroup = DB40E3C11B29E11600F70B74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB40E3BF1B29E11600F70B74 /* Try */,
+				DB40E3DD1B2A287D00F70B74 /* TryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB40E3DC1B2A287D00F70B74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB40E3BC1B29E11600F70B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB40E3CB1B29E12A00F70B74 /* Try.swift in Sources */,
+				DB40E3C41B29E11600F70B74 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB40E3DA1B2A287D00F70B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB40E3E11B2A287D00F70B74 /* TryTests.swift in Sources */,
+				DB87CF721B2A29170033D1E4 /* Try.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DB40E3C51B29E11600F70B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB40E3C61B29E11600F70B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DB40E3C81B29E11600F70B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Try;
+			};
+			name = Debug;
+		};
+		DB40E3C91B29E11600F70B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Try;
+			};
+			name = Release;
+		};
+		DB40E3E41B2A287D00F70B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chaselatta.TryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB40E3E51B2A287D00F70B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chaselatta.TryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB40E3BB1B29E11600F70B74 /* Build configuration list for PBXProject "Try" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB40E3C51B29E11600F70B74 /* Debug */,
+				DB40E3C61B29E11600F70B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB40E3C71B29E11600F70B74 /* Build configuration list for PBXNativeTarget "Try" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB40E3C81B29E11600F70B74 /* Debug */,
+				DB40E3C91B29E11600F70B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB40E3E31B2A287D00F70B74 /* Build configuration list for PBXNativeTarget "TryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB40E3E41B2A287D00F70B74 /* Debug */,
+				DB40E3E51B2A287D00F70B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB40E3B81B29E11600F70B74 /* Project object */;
+}
