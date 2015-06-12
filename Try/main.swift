@@ -10,25 +10,60 @@ import Foundation
 
 enum Error: ErrorType {
     case Unknown
+    case HTTPBadRequest
+    case HTTPInternalServerError
     case StringParsing
 }
 
-func performRequest(url: NSURL?, completion: Try<NSData> -> ()) {
+func errorForResponse(response: NSURLResponse?) -> ErrorType? {
+    guard let response = response as? NSHTTPURLResponse else {
+        return Error.Unknown
+    }
+    
+    switch response.statusCode {
+    case 0..<400:
+        return nil
+    case 400..<500:
+        return Error.HTTPBadRequest
+    case 500..<600:
+        return Error.HTTPInternalServerError
+    default:
+        return Error.Unknown
+    }
+}
+
+func validateResponse(response: NSURLResponse?)(value: NSData) -> Try<NSData> {
+    if let error = errorForResponse(response) {
+        return .Error(error)
+    } else {
+        return .Value(value)
+    }
+}
+
+func convertData(data: NSData) -> Try<String> {
+    if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+        return .Value(str)
+    } else {
+        return .Error(Error.StringParsing)
+    }
+}
+
+func performRequest(url: NSURL?, completion: Try<String> -> ()) {
     guard let url = url else { return }
     
     let session = NSURLSession.sharedSession()
     
-    let task = session.dataTaskWithURL(url) { (data, _, responseError) -> Void in
+    let task = session.dataTaskWithURL(url) { (data, URLResponse, responseError) -> Void in
         let q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(q) {
-            var response: Try<NSData>
+            let response: Try<String>
             
             if let error = responseError {
-                response = Try.Error(error)
-            } else if let data = data {
-                response = Try.Value(data)
+                response = .Error(error)
             } else {
-                response = Try.Error(Error.Unknown)
+                response = Try<NSData>.value(data, orError: Error.Unknown)
+                    .flatMap(validateResponse(URLResponse))
+                    .flatMap(convertData)
             }
             
             dispatch_async(dispatch_get_main_queue()) {
@@ -47,17 +82,9 @@ func performRequest(url: NSURL?, completion: Try<NSData> -> ()) {
 
 let url = NSURL(string: "https://www.google.com")
 
-performRequest(url) { dataTry in
-    let strTry = dataTry.flatMap({ data -> Try<String> in
-        if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
-            return Try.Value(str)
-        } else {
-            return Try.Error(Error.StringParsing)
-        }
-    })
-    
+performRequest(url) { response in
     do {
-        let str = try strTry.get()
+        let str = try response.get()
         print("Got: \(str)")
     } catch {
         print("Error: \(error)")
