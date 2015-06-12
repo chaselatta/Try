@@ -8,17 +8,26 @@
 
 import Foundation
 
-enum Try<T> {
+public enum Try<T> {
     /// When the Try represents a value
     case Value(T)
     
     /// When the Try represents an error. 
     /// The Error will be thrown when _get_ is called.
     case Error(ErrorType)
-    
+
+    /// Returns Value iff value is not nil or Error.
+    public static func value<T>(value: T?, orError error: ErrorType) -> Try<T> {
+        if let value = value {
+            return .Value(value)
+        } else {
+            return .Error(error)
+        }
+    }
+
     /**
-        Call this method to get the value if it exists
-        or throw the error
+    Call this method to get the value if it exists
+    or throw the error
     */
     func get() throws ->  T {
         switch self {
@@ -53,4 +62,3 @@ enum Try<T> {
         }
     }
 }
-

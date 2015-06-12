@@ -19,6 +19,26 @@ class TryTests: XCTestCase {
     let firstError = Try<String>.Error(Error.FirstError)
     let secondError = Try<String>.Error(Error.SecondError)
     
+    func testConvenienceInitValue() {
+        let t = Try<String>.value("a", orError: Error.FirstError)
+        var matched = false
+        
+        if case let .Value(v) = t {
+            matched = (v == "a")
+        }
+        XCTAssertTrue(matched)
+    }
+    
+    func testConvenienceInitError() {
+        let t: Try<String> = Try<String>.value(nil, orError: Error.FirstError)
+        var matched = false
+        
+        if case let .Error(e as Error) = t {
+            matched = (e == Error.FirstError)
+        }
+        XCTAssertTrue(matched)
+    }
+    
     func testGetStringValue() {
         var v = ""
         do {
