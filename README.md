@@ -18,3 +18,16 @@ do {
     print("Error: \(error)")
 }
 ```
+
+Asynchronous code can easily pass the `Try` object into a completion
+block.
+```swift 
+performRequest(url) { response in
+    do {
+        let str = try response.get()
+        print("Got: \(str)")
+    } catch {
+        print("Error: \(error)")
+    }
+}
+```
