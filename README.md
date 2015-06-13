@@ -1,5 +1,4 @@
-This is an experiment in creating an object that captures data and
-errors to be passed through asynchronous functions. The `Try` enum
+The `Try` enum
 allows you to work with methods like `map` and `flatMap` but works
 nicely with Swift's try/catch error handling mechanism when you actually
 need to extract data.
@@ -19,9 +18,45 @@ do {
 }
 ```
 
-Asynchronous code can easily pass the `Try` object into a completion
-block.
-```swift 
+Asynchronous code can easily pass the `Try` object into a completion block.
+```swift
+// Method to convert NSData to String
+func convertData(data: NSData) -> Try<String> {
+    if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+        return .Value(str)
+    } else {
+        return .Error(Error.StringParsing)
+    }
+}
+
+func performRequest(url: NSURL?, completion: Try<String> -> ()) {
+    guard let url = url else { return }
+
+    let session = NSURLSession.sharedSession()
+
+    let task = session.dataTaskWithURL(url) { (data, URLResponse, responseError) -> Void in
+        let response: Try<String>
+
+        if let error = responseError {
+            // There was an error connecting to the server
+            response = .Error(error)
+        } else {
+            // Create a String from the response data or pass along the error.
+            response = Try<NSData>.value(data, orError: Error.Unknown).flatMap(convertData)
+        }
+
+        // hand off the response to the completion block
+        completion(response)
+    }
+
+    if let task = task {
+        task.resume()
+    } else {
+        completion(Try.Error(Error.Unknown))
+    }
+}
+
+// Now call performRequest to fetch the contents of the url.
 performRequest(url) { response in
     do {
         let str = try response.get()
@@ -31,3 +66,4 @@ performRequest(url) { response in
     }
 }
 ```
+See `main.swift` for a working example of the above code.
